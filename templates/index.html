@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+        <title>
+            MCDI ML Prediction!
+        </title>
+    </head>
+    <body>
+            <center><h1 style=color:red;font-family:Arial>MCDI ML Prediction!
+            </h1>
+        <form action ="{{url_for('predict')}}" method="post">
+            <h6>CleaningNo: <input type = "text" name="CleaningNo" placeholder="Enter here" required="required"/></h6>
+            <h6>Total: <input type = "text" name="Total" placeholder="Enter here" required="required"/></h6>
+            <h6>CycleNo: <input type = "text" name="CycleNo" placeholder="Enter here" required="required"/></h6>
+            <h6>AvgFlowrate: <input type = "text" name="AvgFlowrate" placeholder="Enter here" required="required"/></h6>
+            <h6>AvgFeedCond: <input type = "text" name="AvgFeedCond" placeholder="Enter here" required="required"/></h6>
+            <h6>AvgCharCur: <input type = "text" name="AvgCharCur" placeholder="Enter here" required="required"/></h6>
+            <h6>AvgDisCur: <input type = "text" name="AvgDisCur" placeholder="Enter here" required="required"/></h6>
+            <button type="submit" class="btn btn-primary btn-clock btn-large">
+                Predict
+            </button>
+        </form>
+
+        <h4 style="color:violet">
+            {{prediction_text}}</h6>
+        </h4>
+        <img src="data:image/png;base64, {{plot_url}}">
+</html>
